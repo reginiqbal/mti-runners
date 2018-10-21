@@ -21,7 +21,13 @@ function trending_blog_scripts()
 add_action('wp_enqueue_scripts', 'trending_blog_scripts', 20);
 
 
-
+//customize by Regin Iqbal, for exluding some specific category to show up from homepage
+// function exclude_category_home( $query ) {
+// if ( $query->is_home ) {
+// $query->set( 'cat', '-35' );
+// }
+// return $query;
+// }
 
 // Loads custom stylesheet and js for child. 
 // This could override all stylesheets of parent theme and custom js functions
@@ -44,7 +50,7 @@ require_once( get_stylesheet_directory(). '/inc/hooks/slider.php' );
 
 
 //* Add description to menu items
-add_filter( 'walker_nav_menu_start_el', 'trending_blog_add_description', 10, 2 );
+add_filter( 'walker_nav_menu_start_el', 'trending_blog_add_description', 10, 2);
 function trending_blog_add_description( $item_output, $item ) {
     $description = $item->post_content;
     if (('' !== $description) && (' ' !== $description) ) {

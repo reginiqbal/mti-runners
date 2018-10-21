@@ -121,6 +121,13 @@ add_action('after_setup_theme', 'galway_lite_setup');
  *
  * @global int $content_width
  */
+// function exclude_category_home( $query ) {
+// if ( $query->is_home ) {
+// $query->set( 'cat', '-35' );
+// }
+// return $query;
+// }
+
 function galway_lite_content_width()
 {
     $GLOBALS['content_width'] = apply_filters('galway_lite_content_width', 640);
